@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+@import './loader';
+
+// https://lottiefiles.com/share/8glmxfst
+
+$color-primary-cyan:hsl(180,66%,49%);
+$color-primary-cyan-2:rgb(32, 184, 184);
+$color-primary-cyan-3:#30C59B;
+$color-primary-cyan-3-2:#37d8aa;
+$color-primary-cyan-4:#2BD0D0;
+$color-primary-violet:hsl(257,27%,26%);
+$color-primary-bg:rgba(255,255,255,0.85);
+$color-primary-bg-2:rgba(201, 201, 201, 0.85);
+$color-primary-font:rgba(51, 51, 51, 0.85);
+$color-primary-font-2:rgba(17, 17, 17, 0.85);
+$color-primary-font-3:rgba(12, 12, 12, 0.85);
+$color-secondary-red:hsl(0,87%,67%);
+$color-link-output:#CEFAED;
+$color-footer-bg:#010605;
+
+$color-neutral-grayish-violet:hsl(257, 7%, 63%);
+$color-neutral-gray:hsl(0, 0%, 75%);
+$color-dark-gray-2:hsl(0, 0%, 10%);
+$color-neutral-very-dark-blue:hsl(255, 11%, 22%);
+$color-neutral-dark-violet:hsl(260, 8%, 14%);
+
+$gutter-gap:10rem;
+
+.mg-top-large{margin-top: 8rem;}
+.mg-top-medium{margin-top: 4rem;}
+.mg-top-small{margin-top: 2rem;}
+
+.mg-bottom-large{margin-bottom: 8rem;}
+.mg-bottom-medium{margin-bottom: 4rem;}
+.mg-bottom-small{margin-bottom: 2rem;}
+
+.mg-left-large{margin-left: 8rem;}
+.mg-left-medium{margin-left: 4rem;}
+.mg-left-small{margin-left: 2rem;}
+
+.mg-right-large{margin-right: 8rem;}
+.mg-right-medium{margin-right: 4rem;}
+.mg-right-small{margin-right: 2rem;}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;    
+}
+
+html{
+    background-color: $color-primary-bg;
+    font-size: 62.5%; //1rem=10px;
+    background-color: #fff;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: $color-primary-font;
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color:$color-primary-font ;
+}
+
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.nav{
+    display: flex;
+    align-items:center;
+    &__logo{
+        display: inline-block;
+        padding: 3rem 1.5rem 3rem 0rem;
+        width: auto;
+        img{
+            height: 3rem;
+            width: auto;
+        }
+        margin-right: 2rem;
+    }
+    &__links{
+        margin-right: 3rem;
+        li{
+            &:not(:last-child){
+                margin-right: 4rem;
+            }
+            display: inline-block;
+            a{
+                &:hover{
+                    color: $color-primary-font-2;
+                }
+            }
+        }
+        transition: all .5s;
+    }
+    &__btn{
+        display: flex;
+        width: 30%;
+        justify-content: flex-end;
+        li{
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+            display: inline-block;
+        }
+    }
+}
+.header__nav{
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.hero{
+    padding: 2rem 0 2rem 0;
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+    &__head-text{
+        width: 45%;
+        float: left;
+        margin-top: 4rem;
+    }
+    &--heading{
+        color: $color-primary-font-3; 
+        font-size: 5rem;
+    }
+    &--paragraph{
+        color: $color-primary-font;
+    }
+    &__img{
+        width: 50%;
+        float: right;
+        img{
+            max-height: 40rem;
+        }
+    }
+}
+.link-shorten{
+    padding: 8rem 0 8rem 0;
+    // height: 30rem;
+    &__input-wrapper{
+        background:url('../css/img/bg-boost-desktop.svg');
+        padding: 5rem 5rem 5rem 5rem;
+        border-radius: .5rem;
+        background-size: cover;
+        label{
+            display: none;
+        }
+        position: relative;
+    }
+    &__input{
+        font-family: inherit;
+        width: 85%;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        border: 0px;
+        border-radius: 5px;
+        &:focus{
+            outline: none;
+        }
+        &-link{
+            color: $color-primary-font-3;
+        }
+        
+    }
+    &__output{
+        margin-top: 1rem;
+        background-color:$color-link-output;
+        display: flex;
+        padding: 2rem 2rem 2rem 2rem;
+        justify-content: space-between;
+        font-weight: 500;
+        align-items: center;
+        &-link{
+            color: $color-primary-cyan-2;
+            cursor: pointer;
+        }
+    }
+    &__shrt-link{
+        display: flex;
+        align-items: center;
+    }
+
+}   
+.advance-stats{
+    color: $color-primary-font-2;
+    padding: 4rem 0;
+    text-align: center;
+    .sub-head-para{
+        display: inline-block;
+        color: $color-primary-font-3;
+        width: 50%;
+
+    }
+    &__cards{
+        &::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+}
+
+.card{
+    width: calc((100% - 2*#{$gutter-gap})/3);
+    float: left;
+    &:not(:last-child){
+        margin-right: $gutter-gap;
+    }
+    text-align: left;
+}
+
+
+.get-started{
+    padding: 4rem 0;
+    background: url('../css/img/bg-boost-desktop.svg');
+    color: $color-primary-bg;
+    text-align: center;
+}
+
+.heading{
+    &--secondary{
+        color: inherit;
+        text-align: center;
+        font-size: 4rem;
+    }
+}
+
+.footer{
+    padding: 8rem 0 4rem 0;
+    background-color: $color-footer-bg;
+    color: $color-primary-bg;
+    &--logo{
+        fill: $color-primary-bg;
+    }
+    ul{
+        li{
+            font-weight: 300;
+            list-style: none;
+            margin-bottom: 1rem;
+            a{
+                color: $color-primary-bg-2;
+                &:hover{
+                    color: inherit;
+                }
+            }
+
+        }
+        &:not(:last-child){
+            margin-right: 18rem;
+        }
+    }
+    &__links{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.loader{
+    &__wrapper{
+        &::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        position: relative;
+        height: 50px;
+    }
+}
+.btn{
+    padding: .6rem 2rem .6rem 2rem;
+    text-align: center;
+    letter-spacing: .4px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: .9;
+    cursor: pointer;
+    border: 0;
+    &--login{
+        border: 1px solid $color-primary-cyan-3;
+        border-radius: 5px;
+        transition: all .3s;
+        color: $color-primary-cyan-3;
+        &:hover{
+            background-color: $color-primary-cyan-3;
+            color: $color-primary-bg;
+        }
+    }
+    &--signup{
+        border: 1px solid $color-footer-bg;
+        border-radius: 5px;
+        transition: all .3s;
+        // color: $color-primary-cyan;
+        &:hover{
+            background-color: $color-footer-bg;
+            color: $color-primary-bg;
+        }
+    }
+    &--primary{
+        border: 1px solid $color-primary-cyan-3;
+        background-color: $color-primary-cyan-3;
+        transition: all .3s;
+        color: $color-primary-bg;
+        border-radius: 5px;
+        padding: 1rem 2rem 1rem 2rem;
+        &:hover{
+            background-color: $color-primary-cyan-3-2;
+            border-color: $color-primary-cyan-3-2;
+        }
+        
+    }
+    &--short{
+        padding: 1.4rem 2rem 1.4rem 2rem;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 1px solid $color-primary-bg;
+        color: $color-primary-bg;
+        &:hover{
+            background-color: $color-primary-bg;
+            color: $color-primary-cyan-3;
+        }
+    }
+    &--copy{
+        height: 4rem;
+        width: 3rem;
+        background-color: transparent;
+        svg{
+            height: 100%;
+            fill: $color-primary-cyan-2;
+        }
+    }
+    &--footer{
+        border-color: $color-primary-bg;
+        background-color: transparent;
+        &:hover{
+            background-color: $color-primary-bg;
+            color: $color-primary-cyan-3;
+        }
+
+    }
+}
+.attribution{
+    text-align: center;
+    a{
+        color: $color-primary-cyan-3;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

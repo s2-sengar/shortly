@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-@import './loader';
-
 // https://lottiefiles.com/share/8glmxfst
 
 $color-primary-cyan:hsl(180,66%,49%);
@@ -144,9 +142,6 @@ a{
     &__img{
         width: 50%;
         float: right;
-        img{
-            max-height: 40rem;
-        }
     }
 }
 .link-shorten{
@@ -240,6 +235,7 @@ a{
 }
 
 .footer{
+    position: relative;
     padding: 8rem 0 4rem 0;
     background-color: $color-footer-bg;
     color: $color-primary-bg;
@@ -259,24 +255,10 @@ a{
             }
 
         }
-        &:not(:last-child){
-            margin-right: 18rem;
-        }
     }
     &__links{
         display: flex;
-        justify-content: flex-end;
-    }
-}
-.loader{
-    &__wrapper{
-        &::after{
-            content: "";
-            clear: both;
-            display: table;
-        }
-        position: relative;
-        height: 50px;
+        justify-content: space-around;
     }
 }
 .btn{
@@ -358,9 +340,161 @@ a{
     }
 }
 
-
-
-
+@media (max-width:1220px) {
+    .row{
+        max-width: 90rem;
+    }
+    .link-shorten{
+        &__input{
+            width: 80%;  
+        }
+    }
+    .hero{
+        padding: 2rem 0 2rem 0;
+        &__head-text{
+            width: 50%;
+        }
+        &__img{
+            width: 50%;
+        }
+    }
+}
+@media (max-width:930px) {
+    html{
+        font-size: 50%; //1rem=10px; 
+    }
+    body{
+        font-size: 1.45rem;
+    }
+    .nav{
+        &__links{
+            margin-right: 2rem;
+            li{
+                &:not(:last-child){
+                    margin-right: 3rem;
+                }
+            }
+        }
+    }
+    .row{
+        max-width: 75rem;
+    }
+    .link-shorten{
+        &__input{
+            width: 100%;
+            display: block;  
+        }
+    }
+    .hero{
+        padding: 2rem 0 2rem 0;
+        &--heading{
+            color: $color-primary-font-3; 
+            font-size: 4rem;
+        }
+    }
+    .input-form{
+        text-align : center;
+    }
+    .btn{
+        &--short{
+            margin-top: 2rem;
+            margin-left: 0;
+        }
+    }
+    .heading{
+        &--secondary{
+            font-size: 3.5rem;
+        }
+    }
+}
+@media (max-width:640px){
+    .row{
+        max-width: 58rem;
+    }
+    .link-shorten{
+        &__input-link{
+            display: none;
+        }
+        &__output{
+            display: block;
+        }
+        &__shrt-link{
+            justify-content: space-between;
+        }
+    }
+    .nav__btn{
+        display: none;
+    }
+    .heading--secondary{
+        font-size: 4.2rem;
+    }
+    .card{
+        width: 60%;
+        &:not(:last-child){
+            margin-right: auto;
+            margin-bottom: 3rem;
+        }
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+    }
+    .advance-stats .sub-head-para{
+        width: 100%;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        &__head-text{
+            width: 100%;
+            text-align: center;
+        }
+        &__img{
+            width: 100%;
+            order: -1;
+        }
+    }
+    .header__nav{
+        flex-grow: 1;
+    }
+}
+@media (max-width:480px){
+    .row{
+        max-width: 34rem;
+    }
+    body{
+        font-size: 1.2rem;
+    }
+    .hero{
+        &--heading{
+            font-size: 3rem;
+        }
+        &--paragraph{
+            width: 100%;
+            font-size: 1.2rem;
+        }
+    }
+    .nav{
+        &__links{
+            display: flex;
+            flex-grow: 1;
+        }
+    }
+    .footer{
+        &__links{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &__list{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        &--logo{
+            margin-bottom: 3rem;
+        }
+    }
+}
 
 
 

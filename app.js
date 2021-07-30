@@ -18,31 +18,27 @@ async function getShortenURL(url){
     }
 }
 
-// ##TODO
+
 const copyToClip = ()=>{
-    if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText(outputLink.innerHTML);
-        range.select().createTextRange();
-        document.execCommand("copy");
-    }else if (window.getSelection) {
-        var range = document.createRange();
-        range.selectNode(outputLink.innerHTML);
-        window.getSelection().addRange(range);
-        document.execCommand("copy");
-        alert("Text has been copied, now paste in the text-area")
-    }
+    let copyOpBox=document.createElement('INPUT');
+    copyOpBox.setAttribute('type', 'text');
+    document.body.appendChild(copyOpBox);
+    copyOpBox.value=outputLink.innerHTML;
+    copyOpBox.select();
+    copyOpBox.setSelectionRange(0,99999);
+    document.execCommand('copy');
+    copyOpBox.remove();
 };
 
 
 const updateUI = (link) =>{
-    if(input.value.length>15){
-        // do something
+    inputLink.innerHTML=input.value;
+    outputLink.innerHTML=link;
+    if(input.value.length>35){
+        inputLink.innerHTML=inputLink.innerHTML.substring(0, 35)+'...';
     }
     output.classList.remove('hidden');
     loader.style.display='none';
-    inputLink.innerHTML=input.value;
-    outputLink.innerHTML=link;
 }
 
 outputLink.addEventListener('click',copyToClip);
@@ -54,7 +50,7 @@ btnShort.addEventListener('click',()=>{
             shrtLink=res;
             updateUI(shrtLink.result.full_short_link);
             console.log(shrtLink);
-            // console.log(shrtLink.result.full_short_link);
+
         });
     }else{
         //TODO error handling;

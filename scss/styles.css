@@ -530,9 +530,11 @@ a {
 
 @media (max-width: 480px) {
   .row {
-    max-width: 34rem;
+    max-width: 100%;
   }
   body {
+    padding-left: 1rem;
+    padding-right: 1rem;
     font-size: 1.2rem;
   }
   .hero--heading {

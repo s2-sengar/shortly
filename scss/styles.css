@@ -70,6 +70,7 @@ body {
   font-weight: 400;
   color: rgba(51, 51, 51, 0.85);
   font-size: 1.5rem;
+  position: relative;
 }
 
 a {
@@ -80,6 +81,31 @@ a {
 .row {
   max-width: 114rem;
   margin: 0 auto;
+}
+
+.clipboard-copied {
+  width: 30rem;
+  height: 10rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(1, 6, 5, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: inherit;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #20b8b8;
+  border-radius: 5px;
 }
 
 .nav {
@@ -212,6 +238,7 @@ a {
 }
 
 .link-shorten__output {
+  position: relative;
   margin-top: 1rem;
   background-color: #CEFAED;
   display: -webkit-box;

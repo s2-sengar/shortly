@@ -11,7 +11,7 @@ $color-primary-bg-2:rgba(201, 201, 201, 0.85);
 $color-primary-font:rgba(51, 51, 51, 0.85);
 $color-primary-font-2:rgba(17, 17, 17, 0.85);
 $color-primary-font-3:rgba(12, 12, 12, 0.85);
-$color-secondary-red:hsl(0,87%,67%);
+$color-secondary-red:rgba(244, 98, 98, 0.712);
 $color-link-output:#CEFAED;
 $color-footer-bg:#010605;
 
@@ -60,6 +60,7 @@ body{
     font-weight: 400;
     color: $color-primary-font;
     font-size: 1.5rem;
+    position: relative;
 }
 
 a{
@@ -74,6 +75,23 @@ a{
 
 
 
+.clipboard-copied{
+    width: 30rem;
+    height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba($color-footer-bg,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: inherit;
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: $color-primary-cyan-2;
+    border-radius: 5px;
+}
 
 .nav{
     display: flex;
@@ -172,6 +190,7 @@ a{
         
     }
     &__output{
+        position: relative;
         margin-top: 1rem;
         background-color:$color-link-output;
         display: flex;

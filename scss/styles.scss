@@ -4,25 +4,19 @@ $color-primary-cyan:hsl(180,66%,49%);
 $color-primary-cyan-2:rgb(32, 184, 184);
 $color-primary-cyan-3:#30C59B;
 $color-primary-cyan-3-2:#37d8aa;
-$color-primary-cyan-4:#2BD0D0;
-$color-primary-violet:hsl(257,27%,26%);
 $color-primary-bg:rgba(255,255,255,0.85);
 $color-primary-bg-2:rgba(201, 201, 201, 0.85);
 $color-primary-font:rgba(51, 51, 51, 0.85);
 $color-primary-font-2:rgba(17, 17, 17, 0.85);
 $color-primary-font-3:rgba(12, 12, 12, 0.85);
-$color-secondary-red:rgba(244, 98, 98, 0.712);
 $color-link-output:#CEFAED;
 $color-footer-bg:#010605;
 
-$color-neutral-grayish-violet:hsl(257, 7%, 63%);
-$color-neutral-gray:hsl(0, 0%, 75%);
-$color-dark-gray-2:hsl(0, 0%, 10%);
-$color-neutral-very-dark-blue:hsl(255, 11%, 22%);
-$color-neutral-dark-violet:hsl(260, 8%, 14%);
-
 $gutter-gap:10rem;
 
+/*
+* abstract-classes
+*/
 .mg-top-large{margin-top: 8rem;}
 .mg-top-medium{margin-top: 4rem;}
 .mg-top-small{margin-top: 2rem;}
@@ -46,7 +40,6 @@ $gutter-gap:10rem;
     padding: 0;
     box-sizing: inherit;    
 }
-
 html{
     background-color: $color-primary-bg;
     font-size: 62.5%; //1rem=10px;
@@ -54,7 +47,6 @@ html{
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
 }
-
 body{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -62,19 +54,14 @@ body{
     font-size: 1.5rem;
     position: relative;
 }
-
 a{
     text-decoration: none;
     color:$color-primary-font ;
 }
-
 .row{
     max-width: 114rem;
     margin: 0 auto;
 }
-
-
-
 .clipboard-copied{
     width: 30rem;
     height: 10rem;
@@ -92,7 +79,6 @@ a{
     color: $color-primary-cyan-2;
     border-radius: 5px;
 }
-
 .nav{
     display: flex;
     align-items:center;
@@ -138,7 +124,6 @@ a{
     align-items: center;
     width: 60%;
 }
-
 .hero{
     padding: 2rem 0 2rem 0;
     &::after{
@@ -186,8 +171,7 @@ a{
         }
         &-link{
             color: $color-primary-font-3;
-        }
-        
+        }   
     }
     &__output{
         position: relative;
@@ -207,7 +191,6 @@ a{
         display: flex;
         align-items: center;
     }
-
 }   
 .advance-stats{
     color: $color-primary-font-2;
@@ -217,7 +200,6 @@ a{
         display: inline-block;
         color: $color-primary-font-3;
         width: 50%;
-
     }
     &__cards{
         &::after{
@@ -227,7 +209,6 @@ a{
         }
     }
 }
-
 .card{
     width: calc((100% - 2*#{$gutter-gap})/3);
     float: left;
@@ -236,15 +217,12 @@ a{
     }
     text-align: left;
 }
-
-
 .get-started{
     padding: 4rem 0;
     background: url('../css/img/bg-boost-desktop.svg');
     color: $color-primary-bg;
     text-align: center;
 }
-
 .heading{
     &--secondary{
         color: inherit;
@@ -252,7 +230,6 @@ a{
         font-size: 4rem;
     }
 }
-
 .footer{
     position: relative;
     padding: 8rem 0 4rem 0;
@@ -272,7 +249,6 @@ a{
                     color: inherit;
                 }
             }
-
         }
     }
     &__links{
@@ -318,8 +294,7 @@ a{
         &:hover{
             background-color: $color-primary-cyan-3-2;
             border-color: $color-primary-cyan-3-2;
-        }
-        
+        }        
     }
     &--short{
         padding: 1.4rem 2rem 1.4rem 2rem;
@@ -348,7 +323,6 @@ a{
             background-color: $color-primary-bg;
             color: $color-primary-cyan-3;
         }
-
     }
 }
 .attribution{
@@ -357,7 +331,9 @@ a{
         color: $color-primary-cyan-3;
     }
 }
-
+/**
+* media-queries-desktop-first-approach
+*/
 @media (max-width:1220px) {
     .row{
         max-width: 90rem;
@@ -515,13 +491,11 @@ a{
         }
     }
 }
-
 .hidden{
     display: none;
 }
 .loader{
     height: 10rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
